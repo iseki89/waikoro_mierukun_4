@@ -443,7 +443,7 @@ javascript:(function(){
 			user_reward_p.innerHTML = "";
 			if(pushed_name_i!=undefined){
 				const name = buttons[pushed_name_i].innerHTML;
-				const user_reward = users[name][i] * (Math.floor(sum/char_bet[i])*ratio*alone + Math.floor(pot/char_bet[i]));
+				const user_reward = users[name][i] * (Math.floor(Math.floor(sum/char_bet[i])*ratio*alone) + Math.floor(pot/char_bet[i]));
 				if(users[name][i]!=0){
 					char_state[i]["light"] = 1;
 				}
@@ -455,7 +455,7 @@ javascript:(function(){
 			}
 
 			const reward_p = chars[i].getElementsByClassName("reward")[0];
-			const reward = Math.floor(sum/char_bet[i])*ratio*alone+Math.floor(pot/char_bet[i]);
+			const reward = Math.floor(Math.floor(sum/char_bet[i])*ratio*alone)+Math.floor(pot/char_bet[i]);
 			reward_p.innerHTML = "BET:<b>" + char_bet[i] + "</b><br>賞金:一口<b>" + reward + "</b>枚";
 
 			if(char_state[i]["testBet"]==1){
