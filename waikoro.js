@@ -522,7 +522,6 @@ javascript:(function(){
 			}
 			if(button_state[i]["die"]==1){
 				buttons[i].style.backgroundColor = "#7F7F7F";
-				buttons[i].style.boxShadow = "none";
 			}
 		}
 
