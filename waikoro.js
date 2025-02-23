@@ -511,17 +511,23 @@ javascript:(function(){
 		for(i=0;i<button_state.length;i++){
 			buttons[i].style.backgroundColor = "#C3C3C3";
 			buttons[i].style.boxShadow = "none";
-			if(button_state[i]["push"]==1){
-				buttons[i].style.backgroundColor = "#FFF200";
-				buttons[i].style.boxShadow = "0 0 3px #000 inset";
-			}
+
 			if(button_state[i]["light"]==1){
 				buttons[i].style.backgroundColor = "#7affff";
 				buttons[i].style.boxShadow = "0 0 3px #000";
-				if(button_state[i]["push"]==1) buttons[i].style.boxShadow = "0 0 3px #000 inset";
 			}
 			if(button_state[i]["die"]==1){
 				buttons[i].style.backgroundColor = "#7F7F7F";
+				if(button_state[i]["light"]==1){
+					buttons[i].style.backgroundColor = "#4A9C9C";
+				}
+			}
+			if(button_state[i]["push"]==1){
+				buttons[i].style.backgroundColor = "#FFF200";
+				buttons[i].style.boxShadow = "0 0 3px #000 inset";
+				if(button_state[i]["light"]==1){
+					buttons[i].style.backgroundColor = "#7affff";
+				}
 			}
 		}
 
